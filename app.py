@@ -7,7 +7,94 @@ st.set_page_config(
     layout="wide"
 )
 
-# ---------- SIDEBAR with spinning globe ----------
+# ---------- LANGUAGE SELECTION ----------
+lang = st.sidebar.selectbox("🌐 Language / Idioma / Langue", ["English", "Español", "Français"])
+
+# ---------- TRANSLATIONS ----------
+translations = {
+    "English": {
+        "sidebar_title": "GlobalInternet.py",
+        "built_by": "Built by Gesner Deslandes – Coder in Chief",
+        "phone": "📞 (509)-47385663",
+        "email": "✉️ deslandes78@gmail.com",
+        "welcome": "🚀 Welcome to the future of software",
+        "voice_description": """
+            GlobalInternet.py was founded by Gesner Deslandes – owner, founder, and lead engineer.
+            We build Python‑based software on demand for clients worldwide. Like Silicon Valley, but with a Haitian touch and outstanding outcomes.
+            AI‑powered solutions – chatbots, data analysis, automation.
+            Complete election and voting systems – secure, multi‑language, real‑time.
+            Web applications – dashboards, internal tools, online platforms.
+            Full package delivery – we email you the complete code and guide you through installation.
+            Whether you need a company website, a custom software tool, or a full‑scale online platform – we build it, you own it.
+        """,
+        "orbiting_messages": [
+            "🌐 GlobalInternet.py",
+            "🐍 Python on Demand",
+            "🧠 AI & Automation",
+            "🗳️ Voting Systems",
+            "🌐 Web Apps",
+            "📦 Full Delivery",
+            "💡 Build → Ship → Own",
+            "📧 deslandes78@gmail.com"
+        ]
+    },
+    "Español": {
+        "sidebar_title": "GlobalInternet.py",
+        "built_by": "Construido por Gesner Deslandes – Jefe de Programación",
+        "phone": "📞 (509)-47385663",
+        "email": "✉️ deslandes78@gmail.com",
+        "welcome": "🚀 Bienvenido al futuro del software",
+        "voice_description": """
+            GlobalInternet.py fue fundada por Gesner Deslandes – propietario, fundador e ingeniero principal.
+            Construimos software basado en Python bajo demanda para clientes de todo el mundo. Como Silicon Valley, pero con un toque haitiano y resultados sobresalientes.
+            Soluciones impulsadas por IA – chatbots, análisis de datos, automatización.
+            Sistemas completos de votación y elecciones – seguros, multilingües, en tiempo real.
+            Aplicaciones web – paneles, herramientas internas, plataformas en línea.
+            Entrega completa del paquete – le enviamos el código completo por correo electrónico y lo guiamos en la instalación.
+            Ya sea que necesite un sitio web corporativo, una herramienta de software personalizada o una plataforma en línea a gran escala – lo construimos, usted lo posee.
+        """,
+        "orbiting_messages": [
+            "🌐 GlobalInternet.py",
+            "🐍 Python bajo demanda",
+            "🧠 IA y Automatización",
+            "🗳️ Sistemas de Votación",
+            "🌐 Aplicaciones Web",
+            "📦 Entrega Completa",
+            "💡 Construir → Entregar → Poseer",
+            "📧 deslandes78@gmail.com"
+        ]
+    },
+    "Français": {
+        "sidebar_title": "GlobalInternet.py",
+        "built_by": "Construit par Gesner Deslandes – Chef Programmeur",
+        "phone": "📞 (509)-47385663",
+        "email": "✉️ deslandes78@gmail.com",
+        "welcome": "🚀 Bienvenue dans le futur du logiciel",
+        "voice_description": """
+            GlobalInternet.py a été fondé par Gesner Deslandes – propriétaire, fondateur et ingénieur principal.
+            Nous construisons des logiciels Python sur mesure pour des clients du monde entier. Comme la Silicon Valley, mais avec une touche haïtienne et des résultats exceptionnels.
+            Solutions alimentées par l'IA – chatbots, analyse de données, automatisation.
+            Systèmes complets d'élection et de vote – sécurisés, multilingues, en temps réel.
+            Applications web – tableaux de bord, outils internes, plateformes en ligne.
+            Livraison complète du package – nous vous envoyons le code complet par courriel et vous guidons lors de l'installation.
+            Que vous ayez besoin d'un site web d'entreprise, d'un outil logiciel personnalisé ou d'une plateforme en ligne à grande échelle – nous le construisons, vous le possédez.
+        """,
+        "orbiting_messages": [
+            "🌐 GlobalInternet.py",
+            "🐍 Python à la demande",
+            "🧠 IA et Automatisation",
+            "🗳️ Systèmes de Vote",
+            "🌐 Applications Web",
+            "📦 Livraison Complète",
+            "💡 Construire → Livrer → Posséder",
+            "📧 deslandes78@gmail.com"
+        ]
+    }
+}
+
+t = translations[lang]
+
+# ---------- SIDEBAR ----------
 with st.sidebar:
     st.markdown("""
     <style>
@@ -25,27 +112,30 @@ with st.sidebar:
         <div class="spin-logo">🌍</div>
     </div>
     """, unsafe_allow_html=True)
-    st.markdown("## **GlobalInternet.py**")
+    st.markdown(f"## **{t['sidebar_title']}**")
     st.markdown("---")
-    st.markdown("**Built by Gesner Deslandes** – Coder in Chief")
-    st.markdown("📞 (509)-47385663")
-    st.markdown("✉️ deslandes78@gmail.com")
+    st.markdown(t['built_by'])
+    st.markdown(t['phone'])
+    st.markdown(t['email'])
     st.markdown("---")
-    st.markdown("### 🚀 Welcome to the future of software")
-    st.info("Click the button below to hear an AI voice promote our website.")
+    st.markdown(f"### {t['welcome']}")
+    st.info("🔊 Click the button on the 3D scene to hear the AI voice.")
 
-# ---------- MAIN AREA: 3D Globe with orbiting text ----------
+# ---------- MAIN AREA ----------
 st.markdown("<h1 style='text-align: center;'>🌐 GlobalInternet.py – Software on Demand</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center;'>Watch the globe spin with our message – then click the button to hear an AI voice.</p>", unsafe_allow_html=True)
+st.markdown(f"<p style='text-align: center;'>{t['welcome']}</p>", unsafe_allow_html=True)
 
-# HTML/JS component that creates the 3D scene
-globe_html = """
+# Pass translations to the HTML component
+orbiting_messages_json = str(t['orbiting_messages']).replace("'", "\\'")
+voice_text = t['voice_description'].replace("\n", " ").replace("'", "\\'").strip()
+
+globe_html = f"""
 <!DOCTYPE html>
 <html>
 <head>
     <style>
-        body { margin: 0; overflow: hidden; font-family: Arial, sans-serif; }
-        #controls {
+        body {{ margin: 0; overflow: hidden; font-family: Arial, sans-serif; }}
+        #controls {{
             position: absolute;
             bottom: 20px;
             left: 20px;
@@ -55,8 +145,8 @@ globe_html = """
             border-radius: 30px;
             color: white;
             pointer-events: none;
-        }
-        #speakBtn {
+        }}
+        #speakBtn {{
             position: absolute;
             bottom: 20px;
             right: 20px;
@@ -71,11 +161,11 @@ globe_html = """
             font-size: 16px;
             transition: 0.2s;
             pointer-events: auto;
-        }
-        #speakBtn:hover {
+        }}
+        #speakBtn:hover {{
             background: #ff4b4b;
             transform: scale(1.02);
-        }
+        }}
     </style>
 </head>
 <body>
@@ -83,18 +173,18 @@ globe_html = """
     <button id="speakBtn">🔊 AI Voice – Promote Website</button>
 
     <script type="importmap">
-        {
-            "imports": {
+        {{
+            "imports": {{
                 "three": "https://unpkg.com/three@0.128.0/build/three.module.js",
                 "three/addons/": "https://unpkg.com/three@0.128.0/examples/jsm/"
-            }
-        }
+            }}
+        }}
     </script>
 
     <script type="module">
         import * as THREE from 'three';
-        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-        import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
+        import {{ OrbitControls }} from 'three/addons/controls/OrbitControls.js';
+        import {{ CSS2DRenderer, CSS2DObject }} from 'three/addons/renderers/CSS2DRenderer.js';
 
         // --- setup scene
         const scene = new THREE.Scene();
@@ -105,7 +195,7 @@ globe_html = """
         camera.position.set(0, 1, 3.5);
         camera.lookAt(0, 0, 0);
 
-        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        const renderer = new THREE.WebGLRenderer({{ antialias: true }});
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.shadowMap.enabled = true;
         document.body.appendChild(renderer.domElement);
@@ -147,25 +237,18 @@ globe_html = """
         const earthGeometry = new THREE.SphereGeometry(1, 64, 64);
         const textureLoader = new THREE.TextureLoader();
         const earthTexture = textureLoader.load('https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg');
-        const earthMaterial = new THREE.MeshStandardMaterial({ map: earthTexture, roughness: 0.5, metalness: 0.1 });
+        const earthMaterial = new THREE.MeshStandardMaterial({{ map: earthTexture, roughness: 0.5, metalness: 0.1 }});
         const earth = new THREE.Mesh(earthGeometry, earthMaterial);
         earth.castShadow = true;
         earth.receiveShadow = true;
         scene.add(earth);
 
-        // --- orbiting text (CSS2D)
-        const messages = [
-            "🌐 GlobalInternet.py",
-            "🐍 Python on Demand",
-            "🚀 AI & Web Apps",
-            "🌍 Worldwide Clients",
-            "💡 Build → Ship → Own",
-            "📧 deslandes78@gmail.com"
-        ];
+        // --- orbiting text (translated messages)
+        const messages = {orbiting_messages_json};
         const orbitRadius = 1.6;
         const textObjects = [];
         
-        messages.forEach((msg, idx) => {
+        messages.forEach((msg, idx) => {{
             const div = document.createElement('div');
             div.textContent = msg;
             div.style.color = '#ffdd99';
@@ -178,50 +261,48 @@ globe_html = """
             div.style.whiteSpace = 'nowrap';
             div.style.fontFamily = 'Arial';
             const label = new CSS2DObject(div);
-            // Position around the equator, evenly spaced
             const angle = (idx / messages.length) * Math.PI * 2;
             label.position.x = Math.cos(angle) * orbitRadius;
             label.position.z = Math.sin(angle) * orbitRadius;
-            label.position.y = 0.2 * Math.sin(angle * 2); // slight vertical wave
+            label.position.y = 0.2 * Math.sin(angle * 2);
             scene.add(label);
-            textObjects.push({ label, angle, speed: 0.005, radius: orbitRadius });
-        });
+            textObjects.push({{ label, angle, speed: 0.005, radius: orbitRadius }});
+        }});
 
         // Animation loop to rotate the text around the globe
-        function animate() {
+        function animate() {{
             requestAnimationFrame(animate);
-            // rotate text objects around Y axis
-            textObjects.forEach(obj => {
+            textObjects.forEach(obj => {{
                 obj.angle += obj.speed;
                 obj.label.position.x = Math.cos(obj.angle) * obj.radius;
                 obj.label.position.z = Math.sin(obj.angle) * obj.radius;
                 obj.label.position.y = 0.2 * Math.sin(obj.angle * 2);
-            });
-            controls.update(); // updates auto-rotate and damping
+            }});
+            controls.update();
             renderer.render(scene, camera);
             labelRenderer.render(scene, camera);
-        }
+        }}
         animate();
 
         // --- resize handler
-        window.addEventListener('resize', () => {
+        window.addEventListener('resize', () => {{
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
             renderer.setSize(window.innerWidth, window.innerHeight);
             labelRenderer.setSize(window.innerWidth, window.innerHeight);
-        });
+        }});
 
-        // --- AI voice button (Web Speech API)
+        // --- AI voice button with full promotion (translated)
         const speakBtn = document.getElementById('speakBtn');
-        speakBtn.addEventListener('click', () => {
+        speakBtn.addEventListener('click', () => {{
             const speech = new SpeechSynthesisUtterance();
-            speech.text = "Welcome to GlobalInternet dot py. Your best choice for Python software on demand. Visit our website today to turn your ideas into reality. Built by Gesner Deslandes.";
-            speech.lang = 'en-US';
+            speech.text = "{voice_text}";
+            speech.lang = '{ "en": "en-US", "es": "es-ES", "fr": "fr-FR" }'["{lang[:2]}"];
             speech.rate = 0.9;
             speech.pitch = 1.0;
             window.speechSynthesis.cancel();
             window.speechSynthesis.speak(speech);
-        });
+        }});
     </script>
 </body>
 </html>
