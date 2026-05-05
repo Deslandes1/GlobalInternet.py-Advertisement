@@ -36,7 +36,8 @@ translations = {
             "📦 Full Delivery",
             "💡 Build → Ship → Own",
             "📧 deslandes78@gmail.com"
-        ]
+        ],
+        "voice_lang": "en-US"
     },
     "Español": {
         "sidebar_title": "GlobalInternet.py",
@@ -62,7 +63,8 @@ translations = {
             "📦 Entrega Completa",
             "💡 Construir → Entregar → Poseer",
             "📧 deslandes78@gmail.com"
-        ]
+        ],
+        "voice_lang": "es-ES"
     },
     "Français": {
         "sidebar_title": "GlobalInternet.py",
@@ -88,7 +90,8 @@ translations = {
             "📦 Livraison Complète",
             "💡 Construire → Livrer → Posséder",
             "📧 deslandes78@gmail.com"
-        ]
+        ],
+        "voice_lang": "fr-FR"
     }
 }
 
@@ -128,6 +131,7 @@ st.markdown(f"<p style='text-align: center;'>{t['welcome']}</p>", unsafe_allow_h
 # Pass translations to the HTML component
 orbiting_messages_json = str(t['orbiting_messages']).replace("'", "\\'")
 voice_text = t['voice_description'].replace("\n", " ").replace("'", "\\'").strip()
+voice_lang = t['voice_lang']
 
 globe_html = f"""
 <!DOCTYPE html>
@@ -292,12 +296,12 @@ globe_html = f"""
             labelRenderer.setSize(window.innerWidth, window.innerHeight);
         }});
 
-        // --- AI voice button with full promotion (translated)
+        // --- AI voice button with full promotion (translated) - fixed language lookup
         const speakBtn = document.getElementById('speakBtn');
         speakBtn.addEventListener('click', () => {{
             const speech = new SpeechSynthesisUtterance();
             speech.text = "{voice_text}";
-            speech.lang = '{ "en": "en-US", "es": "es-ES", "fr": "fr-FR" }'["{lang[:2]}"];
+            speech.lang = "{voice_lang}";
             speech.rate = 0.9;
             speech.pitch = 1.0;
             window.speechSynthesis.cancel();
