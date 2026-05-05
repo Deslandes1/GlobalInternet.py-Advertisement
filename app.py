@@ -128,7 +128,7 @@ with st.sidebar:
 st.markdown("<h1 style='text-align: center;'>🌐 GlobalInternet.py – Software on Demand</h1>", unsafe_allow_html=True)
 st.markdown(f"<p style='text-align: center;'>{t['welcome']}</p>", unsafe_allow_html=True)
 
-# Pass translations to the HTML component
+# Prepare data for HTML (escape properly)
 orbiting_messages_json = str(t['orbiting_messages']).replace("'", "\\'")
 voice_text = t['voice_description'].replace("\n", " ").replace("'", "\\'").strip()
 voice_lang = t['voice_lang']
@@ -296,7 +296,7 @@ globe_html = f"""
             labelRenderer.setSize(window.innerWidth, window.innerHeight);
         }});
 
-        // --- AI voice button with full promotion (translated) - fixed language lookup
+        // --- AI voice button with full promotion (translated)
         const speakBtn = document.getElementById('speakBtn');
         speakBtn.addEventListener('click', () => {{
             const speech = new SpeechSynthesisUtterance();
