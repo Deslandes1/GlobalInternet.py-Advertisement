@@ -18,15 +18,8 @@ translations = {
         "phone": "📞 (509)-47385663",
         "email": "✉️ deslandes78@gmail.com",
         "welcome": "🚀 Welcome to the future of software",
-        "voice_description": """
-            GlobalInternet.py was founded by Gesner Deslandes – owner, founder, and lead engineer.
-            We build Python‑based software on demand for clients worldwide. Like Silicon Valley, but with a Haitian touch and outstanding outcomes.
-            AI‑powered solutions – chatbots, data analysis, automation.
-            Complete election and voting systems – secure, multi‑language, real‑time.
-            Web applications – dashboards, internal tools, online platforms.
-            Full package delivery – we email you the complete code and guide you through installation.
-            Whether you need a company website, a custom software tool, or a full‑scale online platform – we build it, you own it.
-        """,
+        "voice_lang": "en-US",
+        "voice_description": "GlobalInternet.py was founded by Gesner Deslandes – owner, founder, and lead engineer. We build Python‑based software on demand for clients worldwide. Like Silicon Valley, but with a Haitian touch and outstanding outcomes. AI‑powered solutions – chatbots, data analysis, automation. Complete election and voting systems – secure, multi‑language, real‑time. Web applications – dashboards, internal tools, online platforms. Full package delivery – we email you the complete code and guide you through installation. Whether you need a company website, a custom software tool, or a full‑scale online platform – we build it, you own it.",
         "orbiting_messages": [
             "🌐 GlobalInternet.py",
             "🐍 Python on Demand",
@@ -36,8 +29,7 @@ translations = {
             "📦 Full Delivery",
             "💡 Build → Ship → Own",
             "📧 deslandes78@gmail.com"
-        ],
-        "voice_lang": "en-US"
+        ]
     },
     "Español": {
         "sidebar_title": "GlobalInternet.py",
@@ -45,15 +37,8 @@ translations = {
         "phone": "📞 (509)-47385663",
         "email": "✉️ deslandes78@gmail.com",
         "welcome": "🚀 Bienvenido al futuro del software",
-        "voice_description": """
-            GlobalInternet.py fue fundada por Gesner Deslandes – propietario, fundador e ingeniero principal.
-            Construimos software basado en Python bajo demanda para clientes de todo el mundo. Como Silicon Valley, pero con un toque haitiano y resultados sobresalientes.
-            Soluciones impulsadas por IA – chatbots, análisis de datos, automatización.
-            Sistemas completos de votación y elecciones – seguros, multilingües, en tiempo real.
-            Aplicaciones web – paneles, herramientas internas, plataformas en línea.
-            Entrega completa del paquete – le enviamos el código completo por correo electrónico y lo guiamos en la instalación.
-            Ya sea que necesite un sitio web corporativo, una herramienta de software personalizada o una plataforma en línea a gran escala – lo construimos, usted lo posee.
-        """,
+        "voice_lang": "es-ES",
+        "voice_description": "GlobalInternet.py fue fundada por Gesner Deslandes – propietario, fundador e ingeniero principal. Construimos software basado en Python bajo demanda para clientes de todo el mundo. Como Silicon Valley, pero con un toque haitiano y resultados sobresalientes. Soluciones impulsadas por IA – chatbots, análisis de datos, automatización. Sistemas completos de votación y elecciones – seguros, multilingües, en tiempo real. Aplicaciones web – paneles, herramientas internas, plataformas en línea. Entrega completa del paquete – le enviamos el código completo por correo electrónico y lo guiamos en la instalación. Ya sea que necesite un sitio web corporativo, una herramienta de software personalizada o una plataforma en línea a gran escala – lo construimos, usted lo posee.",
         "orbiting_messages": [
             "🌐 GlobalInternet.py",
             "🐍 Python bajo demanda",
@@ -63,8 +48,7 @@ translations = {
             "📦 Entrega Completa",
             "💡 Construir → Entregar → Poseer",
             "📧 deslandes78@gmail.com"
-        ],
-        "voice_lang": "es-ES"
+        ]
     },
     "Français": {
         "sidebar_title": "GlobalInternet.py",
@@ -72,15 +56,8 @@ translations = {
         "phone": "📞 (509)-47385663",
         "email": "✉️ deslandes78@gmail.com",
         "welcome": "🚀 Bienvenue dans le futur du logiciel",
-        "voice_description": """
-            GlobalInternet.py a été fondé par Gesner Deslandes – propriétaire, fondateur et ingénieur principal.
-            Nous construisons des logiciels Python sur mesure pour des clients du monde entier. Comme la Silicon Valley, mais avec une touche haïtienne et des résultats exceptionnels.
-            Solutions alimentées par l'IA – chatbots, analyse de données, automatisation.
-            Systèmes complets d'élection et de vote – sécurisés, multilingues, en temps réel.
-            Applications web – tableaux de bord, outils internes, plateformes en ligne.
-            Livraison complète du package – nous vous envoyons le code complet par courriel et vous guidons lors de l'installation.
-            Que vous ayez besoin d'un site web d'entreprise, d'un outil logiciel personnalisé ou d'une plateforme en ligne à grande échelle – nous le construisons, vous le possédez.
-        """,
+        "voice_lang": "fr-FR",
+        "voice_description": "GlobalInternet.py a été fondé par Gesner Deslandes – propriétaire, fondateur et ingénieur principal. Nous construisons des logiciels Python sur mesure pour des clients du monde entier. Comme la Silicon Valley, mais avec une touche haïtienne et des résultats exceptionnels. Solutions alimentées par l'IA – chatbots, analyse de données, automatisation. Systèmes complets d'élection et de vote – sécurisés, multilingues, en temps réel. Applications web – tableaux de bord, outils internes, plateformes en ligne. Livraison complète du package – nous vous envoyons le code complet par courriel et vous guidons lors de l'installation. Que vous ayez besoin d'un site web d'entreprise, d'un outil logiciel personnalisé ou d'une plateforme en ligne à grande échelle – nous le construisons, vous le possédez.",
         "orbiting_messages": [
             "🌐 GlobalInternet.py",
             "🐍 Python à la demande",
@@ -90,8 +67,7 @@ translations = {
             "📦 Livraison Complète",
             "💡 Construire → Livrer → Posséder",
             "📧 deslandes78@gmail.com"
-        ],
-        "voice_lang": "fr-FR"
+        ]
     }
 }
 
@@ -128,9 +104,10 @@ with st.sidebar:
 st.markdown("<h1 style='text-align: center;'>🌐 GlobalInternet.py – Software on Demand</h1>", unsafe_allow_html=True)
 st.markdown(f"<p style='text-align: center;'>{t['welcome']}</p>", unsafe_allow_html=True)
 
-# Prepare data for HTML (escape properly)
-orbiting_messages_json = str(t['orbiting_messages']).replace("'", "\\'")
-voice_text = t['voice_description'].replace("\n", " ").replace("'", "\\'").strip()
+# Prepare data for HTML (escape single quotes)
+import json
+orbiting_messages_json = json.dumps(t['orbiting_messages'])
+voice_text = t['voice_description'].replace('\n', ' ').strip()
 voice_lang = t['voice_lang']
 
 globe_html = f"""
@@ -296,11 +273,11 @@ globe_html = f"""
             labelRenderer.setSize(window.innerWidth, window.innerHeight);
         }});
 
-        // --- AI voice button with full promotion (translated)
+        // --- AI voice button
         const speakBtn = document.getElementById('speakBtn');
         speakBtn.addEventListener('click', () => {{
             const speech = new SpeechSynthesisUtterance();
-            speech.text = "{voice_text}";
+            speech.text = `{voice_text}`;
             speech.lang = "{voice_lang}";
             speech.rate = 0.9;
             speech.pitch = 1.0;
